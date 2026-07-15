@@ -1,5 +1,3 @@
-HTML
-
 <!DOCTYPE html>
 
 <html lang="ja">
@@ -12,109 +10,685 @@ HTML
 
   <title>きっかわ Official Site</title>
 
+  <meta name="description" content="札幌を拠点に活動する“自称”音楽クリエイター、きっかわの公式サイト。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
 
-    body {
+    :root {
+
+      --red: #e60020;
+
+      --deep-red: #850015;
+
+      --black: #080808;
+
+      --card: #171717;
+
+      --white: #ffffff;
+
+      --gray: #b8b8b8;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
 
       margin: 0;
 
-      font-family: sans-serif;
+      padding: 0;
 
-      background: #111;
+    }
 
-      color: white;
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      font-family: "Noto Sans JP", sans-serif;
+
+      background: var(--black);
+
+      color: var(--white);
+
+      line-height: 1.8;
+
+      overflow-x: hidden;
+
+    }
+
+    a {
+
+      color: inherit;
+
+    }
+
+    img {
+
+      display: block;
+
+      max-width: 100%;
+
+    }
+
+    .nav {
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 14px 18px;
+
+      background: rgba(0, 0, 0, 0.72);
+
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    }
+
+    .nav-logo {
+
+      font-size: 15px;
+
+      font-weight: 900;
+
+      letter-spacing: 0.04em;
+
+      text-decoration: none;
+
+    }
+
+    .nav-link {
+
+      padding: 8px 14px;
+
+      border: 1px solid rgba(255,255,255,0.35);
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      text-decoration: none;
+
+    }
+
+    .hero {
+
+      position: relative;
+
+      min-height: 100svh;
+
+      display: grid;
+
+      place-items: center;
+
+      text-align: center;
+
+      padding: 100px 20px 55px;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(to bottom,
+
+          rgba(0,0,0,0.18),
+
+          rgba(0,0,0,0.48) 45%,
+
+          rgba(0,0,0,0.96)),
+
+        url("IMG_0546.jpeg") center 28% / cover no-repeat;
+
+    }
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        radial-gradient(circle at 50% 20%,
+
+          rgba(230,0,32,0.24),
+
+          transparent 46%);
+
+      animation: heroGlow 6s ease-in-out infinite alternate;
+
+    }
+
+    @keyframes heroGlow {
+
+      from {
+
+        transform: scale(1);
+
+        opacity: 0.6;
+
+      }
+
+      to {
+
+        transform: scale(1.12);
+
+        opacity: 1;
+
+      }
+
+    }
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: min(100%, 720px);
+
+    }
+
+    .hero-logo {
+
+      width: min(64vw, 260px);
+
+      margin: 0 auto 24px;
+
+      border-radius: 24px;
+
+      box-shadow:
+
+        0 22px 55px rgba(0,0,0,0.58),
+
+        0 0 30px rgba(230,0,32,0.30);
+
+      animation: floatLogo 4s ease-in-out infinite;
+
+    }
+
+    @keyframes floatLogo {
+
+      0%, 100% {
+
+        transform: translateY(0);
+
+      }
+
+      50% {
+
+        transform: translateY(-9px);
+
+      }
+
+    }
+
+    .eyebrow {
+
+      margin-bottom: 8px;
+
+      color: #ff7183;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+    }
+
+    .hero h1 {
+
+      font-size: clamp(38px, 11vw, 76px);
+
+      line-height: 1.1;
+
+      font-weight: 900;
+
+      text-shadow: 0 5px 24px rgba(0,0,0,0.8);
+
+    }
+
+    .hero h1 span {
+
+      display: block;
+
+      margin-top: 8px;
+
+      font-size: 0.38em;
+
+      letter-spacing: 0.11em;
+
+      text-transform: uppercase;
+
+    }
+
+    .hero-copy {
+
+      margin: 25px auto 0;
+
+      font-size: clamp(16px, 4.4vw, 21px);
+
+      font-weight: 600;
+
+      text-shadow: 0 3px 14px rgba(0,0,0,0.9);
+
+    }
+
+    .scroll-link {
+
+      display: inline-flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 4px;
+
+      margin-top: 35px;
+
+      color: #fff;
+
+      font-size: 11px;
+
+      letter-spacing: 0.15em;
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      animation: scrollMove 1.6s ease-in-out infinite;
+
+    }
+
+    @keyframes scrollMove {
+
+      0%, 100% {
+
+        transform: translateY(0);
+
+      }
+
+      50% {
+
+        transform: translateY(8px);
+
+      }
+
+    }
+
+    .section {
+
+      padding: 88px 20px;
+
+    }
+
+    .section-inner {
+
+      width: min(100%, 960px);
+
+      margin: 0 auto;
+
+    }
+
+    .section-heading {
+
+      margin-bottom: 32px;
 
       text-align: center;
 
     }
 
-    header {
+    .section-heading span {
 
-      padding: 60px 20px;
+      color: var(--red);
 
-      background: linear-gradient(135deg, #000, #b00020);
+      font-size: 12px;
 
-    }
+      font-weight: 900;
 
-    h1 {
+      letter-spacing: 0.2em;
 
-      font-size: 44px;
-
-      margin: 10px 0;
+      text-transform: uppercase;
 
     }
 
-    .tagline {
+    .section-heading h2 {
 
-      font-size: 18px;
+      margin-top: 5px;
 
-      line-height: 1.8;
+      font-size: clamp(30px, 8vw, 46px);
 
-    }
-
-    section {
-
-      padding: 40px 20px;
-
-      border-bottom: 1px solid #333;
+      line-height: 1.25;
 
     }
 
-    h2 {
+    .profile-card,
 
-      color: #ff3344;
+    .akakuro-card,
 
-    }
+    .news-card {
 
-    .btn {
+      padding: 30px 22px;
 
-      display: block;
+      background:
 
-      max-width: 300px;
+        linear-gradient(145deg,
 
-      margin: 14px auto;
+          rgba(255,255,255,0.07),
 
-      padding: 16px;
+          rgba(255,255,255,0.025));
 
-      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
 
-      background: #d6001c;
+      border-radius: 26px;
 
-      color: white;
-
-      text-decoration: none;
-
-      font-weight: bold;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
 
     }
 
-    .btn:hover {
+    .profile-card p {
 
-      background: #ff3344;
+      font-size: 16px;
+
+      text-align: center;
 
     }
 
-    .card {
+    .profile-card strong {
 
-      background: #1c1c1c;
+      color: #ff596e;
+
+    }
+
+    .sns-grid {
+
+      display: grid;
+
+      gap: 14px;
+
+    }
+
+    .sns-button {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 16px;
+
+      padding: 18px 20px;
+
+      background: #151515;
+
+      border: 1px solid rgba(255,255,255,0.11);
 
       border-radius: 18px;
 
-      padding: 24px;
+      text-decoration: none;
 
-      margin: 20px auto;
+      transition: transform 0.25s, border-color 0.25s,
 
-      max-width: 600px;
+                  background 0.25s;
+
+    }
+
+    .sns-button:hover,
+
+    .sns-button:active {
+
+      transform: translateY(-4px);
+
+      background: #202020;
+
+      border-color: var(--red);
+
+    }
+
+    .sns-icon {
+
+      display: grid;
+
+      place-items: center;
+
+      width: 46px;
+
+      height: 46px;
+
+      flex-shrink: 0;
+
+      background: linear-gradient(135deg, var(--red), var(--deep-red));
+
+      border-radius: 50%;
+
+      font-size: 21px;
+
+    }
+
+    .sns-text strong {
+
+      display: block;
+
+      font-size: 17px;
+
+    }
+
+    .sns-text small {
+
+      color: var(--gray);
+
+    }
+
+    .akakuro-section {
+
+      background:
+
+        repeating-linear-gradient(
+
+          90deg,
+
+          #090909 0,
+
+          #090909 22px,
+
+          #52000d 22px,
+
+          #52000d 44px
+
+        );
+
+    }
+
+    .akakuro-card {
+
+      background: rgba(8,8,8,0.92);
+
+      text-align: center;
+
+    }
+
+    .akakuro-logo {
+
+      width: min(100%, 390px);
+
+      margin: 0 auto 26px;
+
+      border-radius: 20px;
+
+    }
+
+    .akakuro-card h3 {
+
+      margin-bottom: 12px;
+
+      font-size: 25px;
+
+    }
+
+    .member-badge {
+
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 10px 18px;
+
+      background: var(--red);
+
+      border-radius: 999px;
+
+      font-weight: 800;
+
+    }
+
+    .gallery-grid {
+
+      display: grid;
+
+      gap: 18px;
+
+    }
+
+    .gallery-item {
+
+      overflow: hidden;
+
+      background: #181818;
+
+      border-radius: 22px;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+    }
+
+    .gallery-item img {
+
+      width: 100%;
+
+      height: 360px;
+
+      object-fit: cover;
+
+    }
+
+    .gallery-item figcaption {
+
+      padding: 15px 18px;
+
+      color: #d8d8d8;
+
+      font-size: 14px;
+
+    }
+
+    .news-card {
+
+      text-align: center;
+
+    }
+
+    .news-date {
+
+      color: #ff7183;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+    }
+
+    .news-card h3 {
+
+      margin: 8px 0 10px;
+
+      font-size: 20px;
 
     }
 
     footer {
 
-      padding: 30px;
+      padding: 40px 20px;
 
-      color: #aaa;
+      background: #030303;
 
-      font-size: 14px;
+      color: #8b8b8b;
+
+      text-align: center;
+
+      font-size: 12px;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+    }
+
+    @media (min-width: 700px) {
+
+      .sns-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+      }
+
+      .gallery-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+      }
+
+      .gallery-item img {
+
+        height: 460px;
+
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+
+      *::before,
+
+      *::after {
+
+        animation: none !important;
+
+        scroll-behavior: auto !important;
+
+      }
 
     }
 
@@ -124,104 +698,428 @@ HTML
 
 <body>
 
-<header>
+  <nav class="nav">
 
-  <h1>きっかわ</h1>
+    <a class="nav-logo" href="#home">きっかわ Official Site</a>
 
-  <p class="tagline">
+    <a class="nav-link" href="#sns">SNSを見る</a>
 
-    札幌を拠点に活動する<br>
+  </nav>
 
-    “自称”音楽クリエイター？😎🎵<br>
+  <header class="hero" id="home">
 
-    #ゆるコンサファン❤️🖤
+    <div class="hero-content">
 
-  </p>
+      <img
 
-</header>
+        class="hero-logo"
 
-<section>
+        src="IMG_1876.jpeg"
 
-  <h2>Profile</h2>
+        alt="東区赤黒会ロゴ"
 
-  <div class="card">
+      >
 
-    <p>
+      <p class="eyebrow">Music × Football × Sapporo</p>
 
-      札幌を拠点に活動中。<br>
+      <h1>
 
-      音楽制作やSNSでの発信を楽しみながら、<br>
+        きっかわ
 
-      コンサドーレをゆるく応援しています。
+        <span>Official Site</span>
 
-    </p>
+      </h1>
 
-    <p>
+      <p class="hero-copy">
 
-      東区赤黒会 事務局<br>
+        札幌を拠点に活動する<br>
 
-      ※メンバー随時募集中
+        “自称”音楽クリエイター？😎🎵<br>
 
-    </p>
+        #ゆるコンサファン❤️🖤
 
-  </div>
+      </p>
 
-</section>
+      <a class="scroll-link" href="#profile">
 
-<section>
+        Scroll
 
-  <h2>SNS</h2>
+        <i class="fa-solid fa-chevron-down"></i>
 
-  <a class="btn" href="http://www.tiktok.com/@mthrkkw" target="_blank">TikTok</a>
+      </a>
 
-  <a class="btn" href="https://www.instagram.com/mthrkkw" target="_blank">Instagram</a>
+    </div>
 
-  <a class="btn" href="https://x.com/kikkawathree?s=11" target="_blank">X メイン</a>
+  </header>
 
-  <a class="btn" href="https://x.com/6swp5a9an886858?s=11" target="_blank">X サッカーネタ</a>
+  <main>
 
-</section>
+    <section class="section" id="profile">
 
-<section>
+      <div class="section-inner">
 
-  <h2>東区赤黒会</h2>
+        <div class="section-heading" data-aos="fade-up">
 
-  <div class="card">
+          <span>About Me</span>
 
-    <p>
+          <h2>Profile</h2>
 
-      写真・活動報告・観戦記録などを掲載していく場所です。
+        </div>
 
-    </p>
+        <div class="profile-card" data-aos="fade-up">
 
-    <p>
+          <p>
 
-      ❤️🖤 メンバー随時募集中！
+            札幌を拠点に活動する<br>
 
-    </p>
+            <strong>“自称”音楽クリエイター？😎🎵</strong>
 
-  </div>
+          </p>
 
-</section>
+          <br>
 
-<section>
+          <p>
 
-  <h2>Gallery</h2>
+            #ゆるコンサファン❤️🖤
 
-  <div class="card">
+          </p>
 
-    <p>写真やロゴはあとから追加できます。</p>
+          <br>
 
-  </div>
+          <p>
 
-</section>
+            <strong>東区赤黒会 事務局</strong><br>
 
-<footer>
+            ※メンバー随時募集中
 
-  © 2026 きっかわ Official Site
+          </p>
 
-</footer>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section" id="sns">
+
+      <div class="section-inner">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span>Follow Me</span>
+
+          <h2>SNS</h2>
+
+        </div>
+
+        <div class="sns-grid">
+
+          <a
+
+            class="sns-button"
+
+            href="http://www.tiktok.com/@mthrkkw"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            data-aos="fade-up"
+
+          >
+
+            <span class="sns-icon">
+
+              <i class="fa-brands fa-tiktok"></i>
+
+            </span>
+
+            <span class="sns-text">
+
+              <strong>TikTok</strong>
+
+              <small>@mthrkkw</small>
+
+            </span>
+
+          </a>
+
+          <a
+
+            class="sns-button"
+
+            href="https://www.instagram.com/mthrkkw"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            data-aos="fade-up"
+
+            data-aos-delay="80"
+
+          >
+
+            <span class="sns-icon">
+
+              <i class="fa-brands fa-instagram"></i>
+
+            </span>
+
+            <span class="sns-text">
+
+              <strong>Instagram</strong>
+
+              <small>@mthrkkw</small>
+
+            </span>
+
+          </a>
+
+          <a
+
+            class="sns-button"
+
+            href="https://x.com/kikkawathree?s=11"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            data-aos="fade-up"
+
+            data-aos-delay="160"
+
+          >
+
+            <span class="sns-icon">
+
+              <i class="fa-brands fa-x-twitter"></i>
+
+            </span>
+
+            <span class="sns-text">
+
+              <strong>X</strong>
+
+              <small>きっかわ</small>
+
+            </span>
+
+          </a>
+
+          <a
+
+            class="sns-button"
+
+            href="https://x.com/6swp5a9an886858?s=11"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            data-aos="fade-up"
+
+            data-aos-delay="240"
+
+          >
+
+            <span class="sns-icon">
+
+              <i class="fa-regular fa-futbol"></i>
+
+            </span>
+
+            <span class="sns-text">
+
+              <strong>X・サッカーネタ</strong>
+
+              <small>観戦・コンサドーレ関連</small>
+
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section akakuro-section" id="akakuro">
+
+      <div class="section-inner">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span>Higashiku Akakuro</span>
+
+          <h2>東区赤黒会</h2>
+
+        </div>
+
+        <div class="akakuro-card" data-aos="zoom-in">
+
+          <img
+
+            class="akakuro-logo"
+
+            src="IMG_1876.jpeg"
+
+            alt="東区赤黒会"
+
+          >
+
+          <h3>札幌・東区から赤黒を楽しむ</h3>
+
+          <p>
+
+            活動写真、観戦記録、イベント情報などを<br>
+
+            このページで少しずつ紹介していきます。
+
+          </p>
+
+          <span class="member-badge">
+
+            ❤️🖤 メンバー随時募集中
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section" id="gallery">
+
+      <div class="section-inner">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span>Photos</span>
+
+          <h2>Gallery</h2>
+
+        </div>
+
+        <div class="gallery-grid">
+
+          <figure class="gallery-item" data-aos="fade-up">
+
+            <img
+
+              src="IMG_0546.jpeg"
+
+              alt="きっかわのフィギュア写真"
+
+              loading="lazy"
+
+            >
+
+            <figcaption>
+
+              きっかわ Official Site メインビジュアル
+
+            </figcaption>
+
+          </figure>
+
+          <figure class="gallery-item" data-aos="fade-up">
+
+            <img
+
+              src="IMG_1876.jpeg"
+
+              alt="東区赤黒会ロゴ"
+
+              loading="lazy"
+
+            >
+
+            <figcaption>
+
+              東区赤黒会オリジナルロゴ
+
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section" id="news">
+
+      <div class="section-inner">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span>Information</span>
+
+          <h2>News</h2>
+
+        </div>
+
+        <article class="news-card" data-aos="fade-up">
+
+          <p class="news-date">2026.07</p>
+
+          <h3>きっかわ Official Siteを公開しました！</h3>
+
+          <p>
+
+            写真や活動報告などを、これから少しずつ更新していきます。
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <p>© 2026 きっかわ Official Site</p>
+
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    AOS.init({
+
+      duration: 850,
+
+      once: true,
+
+      offset: 80
+
+    });
+
+    const hero = document.querySelector(".hero");
+
+    window.addEventListener("scroll", () => {
+
+      const scrollY = window.scrollY;
+
+      const position = 28 + scrollY * 0.018;
+
+      hero.style.backgroundPosition =
+
+        `center ${Math.min(position, 45)}%`;
+
+    });
+
+  </script>
 
 </body>
 
-</html
+</html>
