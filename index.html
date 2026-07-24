@@ -1946,7 +1946,29 @@
 
   }
 
-  lightboxClose.addEventList
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+
+    if (event.target === lightbox) {
+
+      closeLightbox();
+
+    }
+
+  });
+
+  document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+      closeLightbox();
+
+    }
+
+  });
+
+</script>
   
 </body>
 
