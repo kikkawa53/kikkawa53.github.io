@@ -1085,6 +1085,88 @@
   font-size: 14px;
 
 }
+
+.gallery-zoom {
+
+  cursor: zoom-in;
+
+  transition: transform 0.25s, opacity 0.25s;
+
+}
+
+.gallery-zoom:active {
+
+  transform: scale(0.98);
+
+  opacity: 0.85;
+
+}
+
+.image-lightbox {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 70px 18px 30px;
+
+  background: rgba(0, 0, 0, 0.94);
+
+}
+
+.image-lightbox.is-open {
+
+  display: flex;
+
+}
+
+.image-lightbox img {
+
+  max-width: 100%;
+
+  max-height: 82vh;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+}
+
+.lightbox-close {
+
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  width: 48px;
+
+  height: 48px;
+
+  color: white;
+
+  background: rgba(255,255,255,0.14);
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  border-radius: 50%;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+}
     
   </style>
 
@@ -1704,9 +1786,15 @@
 
   <div class="news-card">
 
-  <img src="images/IMG_8471.jpeg" alt="Gallery Photo"
+  <img
 
-       style="width:100%; border-radius:18px; margin-bottom:20px;">
+  src="images/IMG_8471.jpeg"
+
+  alt="2026/27シーズン Kickoffイベント"
+
+  class="gallery-zoom"
+
+  style="width:100%; border-radius:18px; margin-bottom:20px;"
 
   <h3>📸 2026/27シーズン Kickoffイベント</h3>
 
@@ -1722,7 +1810,15 @@
 
 <article class="gallery-card">
 
-  <img src="images/IMG_5533.jpeg" alt="コンサドーレ札幌 試合観戦">
+  <img
+
+  src="images/IMG_5533.jpeg"
+
+  alt="コンサドーレ札幌 試合観戦"
+
+  class="gallery-zoom"
+
+>
 
   <div class="gallery-content">
 
@@ -1737,6 +1833,42 @@
 </section>
     
   </main>
+
+<div
+
+  id="image-lightbox"
+
+  class="image-lightbox"
+
+  aria-hidden="true"
+
+>
+
+  <button
+
+    type="button"
+
+    class="lightbox-close"
+
+    aria-label="画像を閉じる"
+
+  >
+
+    ×
+
+  </button>
+
+  <img
+
+    id="lightbox-image"
+
+    src=""
+
+    alt=""
+
+  >
+
+</div>
   
   <footer>
 
@@ -1774,6 +1906,48 @@
 
   </script>
 
+<script>
+
+  const lightbox = document.getElementById("image-lightbox");
+
+  const lightboxImage = document.getElementById("lightbox-image");
+
+  const lightboxClose = document.querySelector(".lightbox-close");
+
+  const zoomImages = document.querySelectorAll(".gallery-zoom");
+
+  zoomImages.forEach((image) => {
+
+    image.addEventListener("click", () => {
+
+      lightboxImage.src = image.src;
+
+      lightboxImage.alt = image.alt;
+
+      lightbox.classList.add("is-open");
+
+      lightbox.setAttribute("aria-hidden", "false");
+
+      document.body.style.overflow = "hidden";
+
+    });
+
+  });
+
+  function closeLightbox() {
+
+    lightbox.classList.remove("is-open");
+
+    lightbox.setAttribute("aria-hidden", "true");
+
+    lightboxImage.src = "";
+
+    document.body.style.overflow = "";
+
+  }
+
+  lightboxClose.addEventList
+  
 </body>
 
 </html>
