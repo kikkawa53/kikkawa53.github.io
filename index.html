@@ -1205,6 +1205,36 @@
   box-shadow: 0 12px 30px rgba(160, 90, 255, 0.35);
 
 }
+
+.music-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 34px;
+
+}
+
+.music-grid .music-card {
+
+  margin-top: 0;
+
+}
+
+@media (min-width: 900px) {
+
+  .music-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+    align-items: start;
+
+  }
+
+}
     
   </style>
 
@@ -1326,6 +1356,8 @@
 
     </div>
 
+<div class="music-grid">
+    
     <article class="music-card" data-aos="zoom-in">
 
       <div class="music-badge">
@@ -1334,13 +1366,7 @@
 
       </div>
 
-<article class="music-card second-song" data-aos="fade-up">
-
-  <div class="music-badge">
-
-    New Track
-
-  </div>
+<article class="music-card second-song" data-aos="fade-up"
 
   <img
 
@@ -1464,12 +1490,6 @@
       
 <article class="music-card third-song" data-aos="fade-up">
 
-  <div class="music-badge">
-
-    New Track
-
-  </div>
-
   <img
 
     src="images/IMG_8652.jpeg"
@@ -1592,6 +1612,8 @@
 
     </article>
 
+</div>
+  
   </div>
 
 </section>
