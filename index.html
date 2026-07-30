@@ -1205,6 +1205,56 @@
   box-shadow: 0 12px 30px rgba(160, 90, 255, 0.35);
 
 }
+
+/* MUSICカードを最新順に並べる */
+
+.music-section .section-inner {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+/* 見出し */
+
+.music-section .section-heading {
+
+  order: 0;
+
+}
+
+/* 1曲目：surreal */
+
+.music-section .surreal-song {
+
+  order: 1;
+
+}
+
+/* 2曲目：Campfire */
+
+.music-section .third-song {
+
+  order: 2;
+
+}
+
+/* 3曲目：Icebreak */
+
+.music-section .second-song {
+
+  order: 3;
+
+}
+
+/* 4曲目：Anthem */
+
+.music-section .section-inner > article.music-card:not(.surreal-song):not(.third-song):not(.second-song) {
+
+  order: 4;
+
+}
     
   </style>
 
@@ -1390,7 +1440,7 @@
 
 </article>
 
-<article class="music-card">
+<article class="music-card surreal-song">
 
   <div class="music-card-inner">
 
@@ -1434,7 +1484,7 @@
 
       rel="noopener noreferrer"
 
-      class="music-listen-button surreal-button"
+      class="music-listen-button surreal-button"ふ
 
     >
 
