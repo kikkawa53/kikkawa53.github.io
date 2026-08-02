@@ -1369,6 +1369,48 @@
   order: 4;
 
 }
+
+.nav {
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+}
+
+.nav-logo {
+
+  margin-right: auto;
+
+}
+
+@media (max-width: 700px) {
+
+  .nav {
+
+    justify-content: center;
+
+  }
+
+  .nav-logo {
+
+    width: 100%;
+
+    text-align: center;
+
+    margin-right: 0;
+
+  }
+
+  .nav-link {
+
+    font-size: 13px;
+
+    padding: 8px 12px;
+
+  }
+
+}
     
   </style>
 
@@ -1382,6 +1424,12 @@
 
     <a class="nav-link" href="#sns">SNSを見る</a>
 
+<a class="nav-link" href="#music">MUSIC</a>
+
+<a class="nav-link" href="#news">NEWS</a>
+
+<a class="nav-link" href="#gallery">GALLERY</a>
+    
   </nav>
 
   <header class="hero" id="home">
